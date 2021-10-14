@@ -1,0 +1,8 @@
++Mike
+Mike:hello
++Kate
++Dmitry
+Dmitry:a l o
+-Dmitry
+Kate:hi
+-Kate

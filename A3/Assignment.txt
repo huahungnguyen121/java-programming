@@ -1,0 +1,8 @@
+Individual Assignment
+Submit to Moodle.
+File name: StudentID_NumberOfFinishedExercises.zip
+Ex: 19127001_02.zip if you have finished 2 of 3 exercises
+
+https://codeforces.com/problemset/problem/5/A
+https://codeforces.com/problemset/problem/10/A
+https://codeforces.com/problemset/gymProblem/102388/D
