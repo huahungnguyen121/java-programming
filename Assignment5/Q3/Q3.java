@@ -1,28 +1,69 @@
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
-public class Q3 {
-    static int countWord(String filepath) {
-        int count = 0;
+class Contact {
+    private String firstName;
+    private String lastName;
+    private String phoneNumber;
+
+    Contact(String info) {
+        String[] temp = info.split("\t");
+        firstName = temp[0];
+        lastName = temp[1];
+        phoneNumber = temp[2];
+    }
+
+    public String toString() {
+        return "First name: %s\nLast name: %s\nPhone number: %s\n".formatted(firstName, lastName, phoneNumber);
+    }
+
+    public void modifyContact(String fName, String lName, String pNum) {
+        firstName = fName;
+        lastName = lName;
+        phoneNumber = pNum;
+    }
+}
+
+class ContactList {
+    private int numberOfContacts;
+    private List<Contact> list = new ArrayList<Contact>();
+
+    ContactList() {
+        numberOfContacts = 0;
+    }
+
+    void readDataFromFile(String filepath) {
         try {
             File file = new File(filepath);
             Scanner scanner = new Scanner(file);
 
-            while (scanner.hasNext()) {
-                String buffer = scanner.next();
-                count++;
+            while (scanner.hasNextLine()) {
+                String buffer = scanner.nextLine();
+                list.add(new Contact(buffer));
             }
 
             scanner.close();
+
+            numberOfContacts = list.size();
         } catch (FileNotFoundException e) {
             System.out.println("There was an error while reading the input file!!!");
         }
-
-        return count;
     }
+
+    public void printList() {
+        for (Contact str : list)
+            System.out.println(str.toString());
+    }
+}
+
+public class Q3 {
     public static void main(String[] args) {
-        //System.out.println("Number of words: %d".formatted(countWord("input.txt")));
+        ContactList list = new ContactList();
+        list.readDataFromFile("input.txt");
+        list.printList();
     }
 }

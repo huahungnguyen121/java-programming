@@ -53,7 +53,7 @@ public class generator {
     }
     public static void main(String[] args) {
         if (args.length == 0) {
-            System.out.println("You have to pass a number of contact you want to generate after calling the program.");
+            System.out.println("You have to pass a number of contacts you want to generate after calling the program.");
         } else {
             try {
                 int n = Integer.parseInt(args[0]);
