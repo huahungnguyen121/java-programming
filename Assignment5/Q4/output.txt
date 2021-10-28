@@ -8,4 +8,5 @@ Binh	Dang Trong	8.99
 Khoi	Tran Van	7.55
 Ngan	Dang Minh	2.47
 Huy	Nguyen Thi	2.78
-5.01
+Hung	Nguyen Hua	9.35
+Average: 5.41

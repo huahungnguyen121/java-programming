@@ -48,8 +48,8 @@ class StudentList {
         list = new Student[0];
     }
 
-    public void addAStudent(String firstName, String lastName, String phoneNum) {
-        Student t = new Student("%s\t%s\t%s".formatted(firstName, lastName, phoneNum));
+    public void addAStudent(String firstName, String lastName, String grade) {
+        Student t = new Student("%s\t%s\t%s".formatted(firstName, lastName, grade));
         addAStudent(t);
     }
 
@@ -133,7 +133,7 @@ class StudentList {
                 writer.write(t.toString());
                 total += Double.parseDouble(t.getGrade());
             }
-            writer.write("%.2f".formatted(total / list.length));
+            writer.write("Average: %.2f".formatted(total / list.length));
             writer.close();
         } catch (IOException e) {
             System.out.println("There was an error while writing the file.");
@@ -142,10 +142,140 @@ class StudentList {
 }
 
 public class Q4 {
+    static void addNewStudent(StudentList list) {
+        Scanner scanner = new Scanner(System.in);
+        String firstName = "";
+        String lastName = "";
+        String grade = "";
+
+        System.out.print("Input First Name: ");
+        firstName = scanner.nextLine();
+        System.out.print("Input Last Name: ");
+        lastName = scanner.nextLine();
+        System.out.print("Input Grade: ");
+        grade = scanner.nextLine();
+        while (true) {
+            try {
+                Double.parseDouble(grade);
+            } catch (NumberFormatException e) {
+                System.out.print("Invalid Grade. Please Re-Input: ");
+                grade = scanner.nextLine();
+                continue;
+            }
+            break;
+        }
+
+        firstName = firstName.equals("") ? "N/A" : firstName;
+        lastName = lastName.equals("") ? "N/A" : lastName;
+
+        list.addAStudent(firstName, lastName, "%.2f".formatted(Double.parseDouble(grade)));
+    }
+
+    static void modifyAStudent(StudentList list) {
+        Scanner scanner = new Scanner(System.in);
+        String firstName = "";
+        String lastName = "";
+        String grade = "";
+
+        System.out.print("Input First Name: ");
+        firstName = scanner.nextLine();
+        System.out.print("Input Last Name: ");
+        lastName = scanner.nextLine();
+
+        firstName = firstName.equals("") ? "N/A" : firstName;
+        lastName = lastName.equals("") ? "N/A" : lastName;
+
+        Student s = list.findAStudent(firstName, lastName);
+        if (s == null) {
+            System.out.println("-> Cannot find matching student");
+            return;
+        }
+
+        System.out.println("==Current information==");
+        System.out.println("First Name: " + firstName);
+        System.out.println("Last Name: " + lastName);
+        System.out.println("Grade: " + s.getGrade());
+        System.out.println("* Leave the input field of the corresponding information empty if you do not want to change");
+        System.out.print("Input New First Name: ");
+        String newFirstName = scanner.nextLine();
+        System.out.print("Input New Last Name: ");
+        String newLastName = scanner.nextLine();
+        System.out.print("Input New Grade: ");
+        grade = scanner.nextLine();
+        while (true) {
+            if (grade.equals(""))
+                break;
+            try {
+                Double.parseDouble(grade);
+            } catch (NumberFormatException e) {
+                System.out.print("Invalid Grade. Please Re-Input: ");
+                grade = scanner.nextLine();
+                continue;
+            }
+            break;
+        }
+
+        firstName = newFirstName.equals("") ? firstName : newFirstName;
+        lastName = newLastName.equals("") ? lastName : newLastName;
+        grade = grade.equals("") ? s.getGrade() : grade;
+
+        s.modifyStudent(firstName, lastName, "%.2f".formatted(Double.parseDouble(grade)));
+    }
+
+    static void deleteAStudent(StudentList list) {
+        Scanner scanner = new Scanner(System.in);
+        String firstName = "";
+        String lastName = "";
+
+        System.out.print("Input First Name: ");
+        firstName = scanner.nextLine();
+        System.out.print("Input Last Name: ");
+        lastName = scanner.nextLine();
+
+        firstName = firstName.equals("") ? "N/A" : firstName;
+        lastName = lastName.equals("") ? "N/A" : lastName;
+
+        if (list.deleteAStudent(firstName, lastName))
+            System.out.println("-> Delete the student successfully");
+        else
+            System.out.println("-> Cannot find matching student");
+    }
+
     public static void main(String[] args) {
         StudentList list = new StudentList();
         list.readDataFromFile("input.txt");
-        list.printList();
-        list.saveToFile();
+        int mode = -1;
+        Scanner scanner = new Scanner(System.in);
+        boolean exitFlag = false;
+        while (!exitFlag) {
+            System.out.println("1: Add new student");
+            System.out.println("2: Modify student and grade");
+            System.out.println("3: Delete a student");
+            System.out.println("4: Exit and save");
+            System.out.print("-> Please input mode: ");
+            try {
+                mode = scanner.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.print("-> Invalid mode. Please re-input mode: ");
+                scanner.nextLine();
+                mode = scanner.nextInt();
+            }
+            switch (mode) {
+                case 1:
+                    addNewStudent(list);
+                    break;
+                case 2:
+                    modifyAStudent(list);
+                    break;
+                case 3:
+                    deleteAStudent(list);
+                    break;
+                case 4:
+                    list.saveToFile();
+                    exitFlag = true;
+                    break;
+            }
+        }
+        scanner.close();
     }
 }

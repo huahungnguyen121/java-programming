@@ -1,0 +1,21 @@
+1. Write a program that counts the number of lines of an
+input file.
+
+2. Write a program that counts the number of words in an
+input file.
+
+3. Write a program that reads a file (provided) containing list of
+contacts. Each line has three fields: first name, last name,
+phone number separated by a tab (\t).
+• Define the class Contact having the three fields mentioned above.
+• Read file and put it in a list of contacts, then add operations on that list:
+Add new contact, Modify a contact, Delete a contact.
+• Save a list of contacts to an output file.
+
+4. Write a program that reads an input file (provided) containing
+the grades of students in Java course (Each student is stored in
+a line, all fields are seperated by a tab \t).
+• Define all necessary classes.
+• Read the input file and put information in a list of Students.
+• Add operations on the list of Students: manage Students, manage grades.
+• Save the list into an outputfile with the average note (Column TB).

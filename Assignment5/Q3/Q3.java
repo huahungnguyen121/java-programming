@@ -216,7 +216,6 @@ public class Q3 {
         Scanner scanner = new Scanner(System.in);
         String firstName = "";
         String lastName = "";
-        String phoneNum = "";
 
         System.out.print("Input First Name: ");
         firstName = scanner.nextLine();
