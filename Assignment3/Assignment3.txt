@@ -1,0 +1,3 @@
+EX1: https://codeforces.com/problemset/problem/5/A
+EX2: https://codeforces.com/problemset/problem/10/A
+EX3: https://codeforces.com/problemset/gymProblem/102388/D
