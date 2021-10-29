@@ -147,6 +147,7 @@ public class Q4 {
         String firstName = "";
         String lastName = "";
         String grade = "";
+        double mark = 0;
 
         System.out.print("Input First Name: ");
         firstName = scanner.nextLine();
@@ -156,7 +157,12 @@ public class Q4 {
         grade = scanner.nextLine();
         while (true) {
             try {
-                Double.parseDouble(grade);
+                mark = Double.parseDouble(grade);
+                if (mark > 10 || mark < 0) {
+                    System.out.print("Invalid Grade. Please Re-Input: ");
+                    grade = scanner.nextLine();
+                    continue;
+                }
             } catch (NumberFormatException e) {
                 System.out.print("Invalid Grade. Please Re-Input: ");
                 grade = scanner.nextLine();
@@ -168,7 +174,7 @@ public class Q4 {
         firstName = firstName.equals("") ? "N/A" : firstName;
         lastName = lastName.equals("") ? "N/A" : lastName;
 
-        list.addAStudent(firstName, lastName, "%.2f".formatted(Double.parseDouble(grade)));
+        list.addAStudent(firstName, lastName, "%.2f".formatted(mark));
     }
 
     static void modifyAStudent(StudentList list) {
@@ -176,6 +182,7 @@ public class Q4 {
         String firstName = "";
         String lastName = "";
         String grade = "";
+        double mark = 0;
 
         System.out.print("Input First Name: ");
         firstName = scanner.nextLine();
@@ -206,7 +213,12 @@ public class Q4 {
             if (grade.equals(""))
                 break;
             try {
-                Double.parseDouble(grade);
+                mark = Double.parseDouble(grade);
+                if (mark > 10 || mark < 0) {
+                    System.out.print("Invalid Grade. Please Re-Input: ");
+                    grade = scanner.nextLine();
+                    continue;
+                }
             } catch (NumberFormatException e) {
                 System.out.print("Invalid Grade. Please Re-Input: ");
                 grade = scanner.nextLine();

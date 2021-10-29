@@ -5,7 +5,7 @@ Thai	Dang The	6.19
 Thai	Dang Trong	4.24
 Nghia	Ngo Thi	6.57
 Binh	Dang Trong	8.99
-Khoi	Tran Van	7.55
+Dung	Le Duy	7.55
 Ngan	Dang Minh	2.47
 Huy	Nguyen Thi	2.78
 Hung	Nguyen Hua	9.35
