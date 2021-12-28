@@ -4,8 +4,10 @@ import java.util.ArrayList;
 public class Database {
     PreparedStatement pStmt = null;
     Statement stmt = null;
-    Driver myDriver = null;
-    Connection conn = null;
+
+    static Driver myDriver = null;
+    static Connection conn = null;
+
     String DB_URL = "jdbc:sqlserver://localhost";
     String DB_USERNAME = "sa";
     String DB_PASSWORD = "123456";
@@ -17,10 +19,9 @@ public class Database {
 
             conn = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
 
-            System.out.println("Connect DB successfully");
+            System.out.println("Connect to DB successfully");
         } catch (SQLException e) {
-            System.out.println("Fail to connect DB");
-            System.out.println(e);
+            System.out.println("Fail to connect to DB");
         }
     }
 
@@ -31,7 +32,7 @@ public class Database {
             pStmt = conn.prepareStatement(sql);
             pStmt.setString(1, mode ? sId : "%" + firstName + "%");
             ResultSet res = pStmt.executeQuery();
-            ArrayList<Student> students = new ArrayList<Student>();
+            ArrayList<Student> students = new ArrayList<>();
             while (true) {
                 try {
                     if (!res.next())
@@ -55,7 +56,6 @@ public class Database {
             pStmt.close();
             return students;
         } catch (SQLException e) {
-            System.out.println(e);
             return null;
         }
     }
@@ -64,7 +64,7 @@ public class Database {
             stmt = conn.createStatement();
             stmt.executeUpdate("USE STUDENTS");
             ResultSet res = stmt.executeQuery("SELECT * FROM Student");
-            ArrayList<Student> students = new ArrayList<Student>();
+            ArrayList<Student> students = new ArrayList<>();
             while (true) {
                 try {
                     if (!res.next())
@@ -88,12 +88,11 @@ public class Database {
             stmt.close();
             return students;
         } catch (SQLException e) {
-            System.out.println(e);
             return null;
         }
     }
     public boolean queryDB(String sql) {
-        Statement stmt = null;
+        Statement stmt;
         try {
             stmt = conn.createStatement();
             stmt.executeUpdate("USE STUDENTS");
@@ -101,7 +100,6 @@ public class Database {
             stmt.close();
             return true;
         } catch (SQLException e) {
-            System.out.println(e);
             return false;
         }
     }
