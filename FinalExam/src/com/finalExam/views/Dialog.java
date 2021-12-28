@@ -1,7 +1,6 @@
-package com.finalExam.dialogs;
+package com.finalExam.views;
 
-import com.finalExam.Student;
-import com.finalExam.database.Database;
+import com.finalExam.database.models.Student;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -10,14 +9,11 @@ import java.util.ArrayList;
 
 public class Dialog extends JDialog {
     ArrayList<Student> dataList;
-    Database db;
 
-    public Dialog(JFrame parent, Database database) {
+    public Dialog(JFrame parent) {
         super(parent, "View All Students");
 
-        db = database;
-
-        dataList = db.queryAll();
+        dataList = new Student().getAll();
 
         this.setSize(500, 500);
 

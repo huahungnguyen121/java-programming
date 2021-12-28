@@ -2,17 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c2f08539-de48-416c-b230-29c964df6bd9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../BTTL8/JavaSwingDB/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mssql_jdbc_9_4_0_jre16.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/finalExam/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/finalExam/database/Database.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/finalExam/dialogs/Dialog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/finalExam/dialogs/Dialog2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BTTL8/JavaSwingDB/src/SpringUtilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/finalExam/SpringUtilities.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/finalExam/controllers/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/finalExam/views/MainScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinalExam.iml" beforeDir="false" afterPath="$PROJECT_DIR$/FinalExam.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/finalExam/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/finalExam/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/finalExam/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/finalExam/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/finalExam/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/finalExam/database/models/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/finalExam/database/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/finalExam/database/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/finalExam/dialogs/Dialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/finalExam/views/Dialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/finalExam/dialogs/Dialog2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/finalExam/views/Dialog2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,6 +97,11 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.finalExam" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">

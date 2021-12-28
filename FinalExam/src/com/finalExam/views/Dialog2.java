@@ -1,6 +1,6 @@
-package com.finalExam.dialogs;
+package com.finalExam.views;
 
-import com.finalExam.database.Database;
+import com.finalExam.controllers.Controller;
 
 import com.finalExam.SpringUtilities;
 
@@ -8,12 +8,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Dialog2 extends JDialog {
-    Database db;
-
-    public Dialog2(JFrame parent, Database database) {
+    public Dialog2(JFrame parent) {
         super(parent, "Add new student");
-
-        db = database;
 
         Container c = this.getContentPane();
 
@@ -89,10 +85,12 @@ public class Dialog2 extends JDialog {
         layout.putConstraint(SpringLayout.SOUTH, dateFormat, -10, SpringLayout.SOUTH, c);
 
         confirmButton.addActionListener(e12 -> {
-            String sql = "INSERT INTO Student(StudentID, FirstName, LastName, DoB, Address) " +
-                    "VALUES ('%s', '%s', '%s', '%s', '%s')".formatted(idValue.getText(), fNameValue.getText(), lNameValue.getText(), DoBValue.getText(), addressValue.getText());
-            db.queryDB(sql);
-            status.setText("Done");
+            boolean res = new Controller().addToDB(idValue.getText(), fNameValue.getText(), lNameValue.getText(), DoBValue.getText(), addressValue.getText());
+            if (res) {
+                status.setText("Done");
+            } else {
+                status.setText("Failed");
+            }
         });
     }
 
