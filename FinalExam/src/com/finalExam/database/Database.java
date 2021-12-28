@@ -30,17 +30,4 @@ public class Database {
             return false;
         }
     }
-
-    public boolean queryDB(String sql) {
-        Statement stmt;
-        try {
-            stmt = conn.createStatement();
-            stmt.executeUpdate("USE STUDENTS");
-            stmt.executeUpdate(sql);
-            stmt.close();
-            return true;
-        } catch (SQLException e) {
-            return false;
-        }
-    }
 }

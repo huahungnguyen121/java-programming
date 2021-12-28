@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c2f08539-de48-416c-b230-29c964df6bd9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/finalExam/controllers/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/finalExam/views/MainScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/finalExam/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/finalExam/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/finalExam/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/finalExam/database/models/Student.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/finalExam/database/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/finalExam/database/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/finalExam/dialogs/Dialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/finalExam/views/Dialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/finalExam/dialogs/Dialog2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/finalExam/views/Dialog2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/finalExam/views/MainScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/finalExam/views/MainScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
