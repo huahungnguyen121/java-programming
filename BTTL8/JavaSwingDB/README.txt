@@ -1,4 +1,4 @@
-- This project use MS SQL SERVER
+- This project uses MS SQL SERVER
 - Run the sql query file "createDB" first to create database STUDENTS.
 - Driver: MS JDBC Driver 9.4 for SQL Server
 - Link: https://docs.microsoft.com/vi-vn/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-2017
